@@ -1,0 +1,22 @@
+/*添加迷雾文字样式*/
+.ms-heimu{
+	background: black;
+	color: black;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+}
+.ms-heimu::selection{
+	background: black;
+	color: white;
+}
+.ms-heimu::-moz-selection{
+	background: black;
+	color: white;
+}
+.ms-heimu:hover{
+	background: black;
+	color: white;
+}
