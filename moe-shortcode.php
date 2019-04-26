@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Moe-Shortcode短代码插件
-Plugin URI: http://www.paulund.co.uk
+Plugin URI: https://github.com/mouyase/moe-shortcode
 Description: 添加一些使用的短代码到你的Wordpress中
 Version: 0.0.1
 Author: 某亚瑟
