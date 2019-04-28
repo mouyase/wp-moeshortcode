@@ -53,7 +53,7 @@ function msgitwatch($atts) {
 add_shortcode('msgitwatch', 'msgitwatch');
 
 /*GithubStar*/
-function msgitstar($atts, $content = '') {
+function msgitstar($atts) {
 	extract(shortcode_atts(array("user" => '', "repo" => '', "link" => 'true'), $atts));
 	$return .= '<p style="display: flex;align-items: center; flex-wrap: wrap">';
 	$return .= '<span style="margin-right:8px">';
@@ -112,4 +112,12 @@ function msgitdownload($atts) {
 }
 add_shortcode('msgitdownload', 'msgitdownload');
 
+/*彩色文字*/
+$colors = array('aqua', 'black', 'blue', 'fuchsia', 'gray', 'green', 'lime', 'maroon', 'navy', 'olive', 'orange', 'purple', 'red', 'silver', 'teal', 'white', 'yellow',
+);
+foreach ($colors as $value) {
+	add_shortcode('ms' . $value, function ($atts, $content = '') use ($value) {
+		return '<span style="color:' . $value . '">' . $content . '</span>';
+	});
+}
 ?>
