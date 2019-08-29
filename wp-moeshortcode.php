@@ -120,4 +120,53 @@ foreach ($colors as $value) {
 		return '<span style="color:' . $value . '">' . $content . '</span>';
 	});
 }
+
+
+if (is_admin()) {
+	// Create the Paulund toolbar
+	$shortcodes = new View_All_Available_Shortcodes();
+}
+
+class View_All_Available_Shortcodes {
+	public function __construct() {
+		$this->Admin();
+	}
+	public function Admin() {
+		add_action('admin_menu', array(&$this, 'Admin_Menu'));
+	}
+	public function Admin_Menu() {
+		add_submenu_page(
+			'plugins.php',
+			'查看所有短代码',
+			'查看所有短代码',
+			'manage_options',
+			'view-all-shortcodes',
+			array(&$this, 'Display_Admin_Page'));
+	}
+	public function Display_Admin_Page() {
+		global $shortcode_tags;
+
+		?>
+		<div class="wrap">
+			<div id="icon-options-general" class="icon32"><br></div>
+			<h2>查看所有短代码</h2>
+			<div class="section panel">
+				<p>这个页面会显示所有你可以在Wordpress中使用的短代码</p>
+				<table class="widefat importers">
+					<tr><td><strong>短代码</strong></td></tr>
+					<?php
+
+					foreach ($shortcode_tags as $code => $function) {
+						?>
+						<tr><td>[<?php echo $code; ?>]</td></tr>
+						<?php
+					}
+					?>
+
+				</table>
+			</div>
+		</div>
+		<?php
+	}
+}
 ?>
