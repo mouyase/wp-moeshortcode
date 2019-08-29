@@ -11,8 +11,8 @@ const MS_VERSION = '0.0.1';
 
 /*添加样式文件*/
 function ms_scripts() {
-	wp_enqueue_style('wp-shortcode', 'https://cdn.jsdelivr.net/gh/mouyase/wp-moeshortcode/css/style.css', array(), MS_VERSION);
-	wp_enqueue_script('wp-shortcode-github-button',  'https://cdn.jsdelivr.net/gh/mouyase/wp-moeshortcode/js/buttons.js', array(), MS_VERSION);
+	wp_enqueue_style('wp-shortcode', 'https://cdn.jsdelivr.net/gh/mouyase/wp-moeshortcode/css/style.min.css', array(), MS_VERSION);
+	wp_enqueue_script('wp-shortcode-github-button',  'https://cdn.jsdelivr.net/gh/mouyase/wp-moeshortcode/js/buttons.min.js', array(), MS_VERSION);
 }
 add_action('wp_enqueue_scripts', 'ms_scripts');
 
