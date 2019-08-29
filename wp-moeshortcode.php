@@ -1,18 +1,18 @@
-<?php
+﻿<?php
 /*
-Plugin Name: Moe-Shortcode短代码插件
-Plugin URI: http://www.paulund.co.uk
+Plugin Name: 短代码插件MoeShortcode
+Plugin URI: https://4cy.me
 Description: 添加一些使用的短代码到你的Wordpress中
 Version: 0.0.1
 Author: 某亚瑟
-Author URI: http://4cy.me
+Author URI: https://4cy.me
  */
 const MS_VERSION = '0.0.1';
 
 /*添加样式文件*/
 function ms_scripts() {
-	wp_enqueue_style('moe-shortcode', plugins_url('/css/style.css', __FILE__), array(), MS_VERSION);
-	wp_enqueue_script('moe-shortcode-github_button', 'https://buttons.github.io/buttons.js', array(), MS_VERSION);
+	wp_enqueue_style('wp-shortcode', plugins_url('/css/style.css', __FILE__), array(), MS_VERSION);
+	wp_enqueue_script('wp-shortcode-github-button', 'https://buttons.github.io/buttons.js', array(), MS_VERSION);
 }
 add_action('wp_enqueue_scripts', 'ms_scripts');
 
@@ -30,7 +30,7 @@ function msgitfollow($atts) {
 	$return .= '<a class="github-button" href="https://github.com/' . $user . '" data-size="large" data-show-count="true" aria-label="Follow @' . $user . ' on GitHub">Follow @' . $user . '</a>';
 	$return .= '</span>';
 	if ($link == 'true') {
-		$return .= '<a style="margin-bottom:8px" href="https://github.com/' . $user . '">https://github.com/' . $user . '</a>';
+		$return .= '<a href="https://github.com/' . $user . '">https://github.com/' . $user . '</a>';
 	}
 	$return .= '</p>';
 	return $return;
@@ -45,7 +45,7 @@ function msgitwatch($atts) {
 	$return .= '<a class="github-button" href="https://github.com/' . $user . '/' . $repo . '/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch ' . $user . '/' . $repo . ' on GitHub">Watch</a>';
 	$return .= '</span>';
 	if ($link == 'true') {
-		$return .= '<a style="margin-bottom:8px" href="https://github.com/' . $user . '/' . $repo . '">https://github.com/' . $user . '/' . $repo . '</a>';
+		$return .= '<a href="https://github.com/' . $user . '/' . $repo . '">https://github.com/' . $user . '/' . $repo . '</a>';
 	}
 	$return .= '</p>';
 	return $return;
@@ -60,7 +60,7 @@ function msgitstar($atts) {
 	$return .= '<a class="github-button" href="https://github.com/' . $user . '/' . $repo . '" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ' . $user . '/' . $repo . ' on GitHub">Star</a>';
 	$return .= '</span>';
 	if ($link == 'true') {
-		$return .= '<a style="margin-bottom:8px" href="https://github.com/' . $user . '/' . $repo . '">https://github.com/' . $user . '/' . $repo . '</a>';
+		$return .= '<a href="https://github.com/' . $user . '/' . $repo . '">https://github.com/' . $user . '/' . $repo . '</a>';
 	}
 	$return .= '</p>';
 	return $return;
@@ -75,7 +75,7 @@ function msgitfork($atts) {
 	$return .= '<a class="github-button" href="https://github.com/' . $user . '/' . $repo . '/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork ' . $user . '/' . $repo . ' on GitHub">Fork</a>';
 	$return .= '</span>';
 	if ($link == 'true') {
-		$return .= '<a style="margin-bottom:8px" href="https://github.com/' . $user . '/' . $repo . '">https://github.com/' . $user . '/' . $repo . '</a>';
+		$return .= '<a href="https://github.com/' . $user . '/' . $repo . '">https://github.com/' . $user . '/' . $repo . '</a>';
 	}
 	$return .= '</p>';
 	return $return;
@@ -90,7 +90,7 @@ function msgitissue($atts) {
 	$return .= '<a class="github-button" href="https://github.com/' . $user . '/' . $repo . '/issues" data-icon="octicon-issue-opened" data-size="large" data-show-count="true" aria-label="Issue ' . $user . '/' . $repo . ' on GitHub">Issue</a>';
 	$return .= '</span>';
 	if ($link == 'true') {
-		$return .= '<a style="margin-bottom:8px" href="https://github.com/' . $user . '/' . $repo . '">https://github.com/' . $user . '/' . $repo . '</a>';
+		$return .= '<a href="https://github.com/' . $user . '/' . $repo . '">https://github.com/' . $user . '/' . $repo . '</a>';
 	}
 	$return .= '</p>';
 	return $return;
@@ -105,7 +105,7 @@ function msgitdownload($atts) {
 	$return .= '<a class="github-button" href="https://github.com/' . $user . '/' . $repo . '/archive/master.zip" data-icon="octicon-cloud-download" data-size="large" aria-label="Download ' . $user . '/' . $repo . ' on GitHub">Download</a>';
 	$return .= '</span>';
 	if ($link == 'true') {
-		$return .= '<a style="margin-bottom:8px" href="https://github.com/' . $user . '/' . $repo . '">https://github.com/' . $user . '/' . $repo . '</a>';
+		$return .= '<a href="https://github.com/' . $user . '/' . $repo . '">https://github.com/' . $user . '/' . $repo . '</a>';
 	}
 	$return .= '</p>';
 	return $return;
